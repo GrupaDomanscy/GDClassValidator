@@ -24,4 +24,15 @@ public class RequiredRuleTest
         Assert.True(errors[0].MemberNames.ToArray()[0] == "SomeInt");
         Assert.True(errors[0].ErrorMessage == "REQUIRED");
     }
+
+    [Fact]
+    public void RequiredRule_DoesNotTriggerIfValueIsValid()
+    {
+        Payload payload = new Payload();
+        payload.SomeInt = 444;
+
+        var errors = payload.Validate();
+        
+        Assert.True(errors.Count == 0);
+    }
 }
