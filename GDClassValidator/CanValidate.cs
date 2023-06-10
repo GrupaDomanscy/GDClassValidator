@@ -12,9 +12,4 @@ public abstract class CanValidate
 
         return results;
     }
-
-    public void ValidateAndThrow()
-    {
-        
-    }
 }
